@@ -1,0 +1,6 @@
+
+@media screen and (max-width:425px) {
+   .btn-outline-info, .btn-outline-danger{
+      padding: 0.1rem !important;
+   }
+}

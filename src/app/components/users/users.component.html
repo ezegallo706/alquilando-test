@@ -1,3 +1,59 @@
-<p>
-  users works!
-</p>
+<h1>Usuarios</h1>
+<hr>
+
+<div class="row">
+  <div class="col-md-12 text-right pb-3">
+    <button 
+    [routerLink]="['/user','nuevo']"
+    class="btn btn-outline-success"
+    type="button" name="button">
+      Nuevo usuario
+    </button>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead class="thead-inverse"> 
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Avatar</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td> <img class="img-fluid" src="{{user.avatar}}" alt="{{user.avatar}}"></td>
+            <td>
+              <button 
+              [routerLink]="['/user',user.id]"
+              class="btn btn-outline-info btn-sm mr-2"
+              type="button" name="button">
+                Editar
+              </button>
+            </td>
+            <td>
+              <button 
+              (click)="borrarUsuario(users.id)"
+              class="btn btn-outline-danger btn-sm"
+              type="button" name="button">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-RouterModule
+
 import { UsersComponent } from '../components/users/users.component';
 import { UserComponent } from '../components/user/user.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/users', pathMatch: 'full'},
+  { path: '', pathMatch: 'full', redirectTo: 'users'},
   { path: 'users', component: UsersComponent},
-  { path: 'user/:id', component: UserComponent}
+  { path: 'user/:id', component: UserComponent},
+  { path: 'user', component: UserComponent}
 
 ];
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
-  ]
+  ],
+  declarations: []
 })
 export class AppRoutingModule { }
